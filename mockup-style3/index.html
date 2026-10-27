@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Макет головної, стиль 3 «Жива картина» (гілка design/claude). Не для індексації. -->
+<meta name="robots" content="noindex, nofollow">
+<title>ІСККОН Чернівці — Центр ведичної культури</title>
+<meta name="description" content="Центр ведичної культури ІСККОН у Чернівцях: недільні програми, лекції з філософії, курси, благодійність «Їжа життя», підтримка храму.">
+<meta name="theme-color" content="#140B07">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="fonts/cormorant-normal-cyrillic.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../assets/fonts/onest-normal-400-700-cyrillic.woff2">
+<link rel="preload" as="image" type="image/webp" href="img/pilot-kirtan-painting.webp" fetchpriority="high">
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="style3.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../assets/favicon-32.png" sizes="32x32" type="image/png">
+</head>
+<body>
+<a class="skip" href="#main">Перейти до вмісту</a>
+
+<!-- орнамент: лоза з лотосом для кутів рамок, золота лінія -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="vine" viewBox="0 0 120 120">
+    <path d="M4 116V34C4 17 17 4 34 4h82" fill="none" stroke="currentColor" stroke-width="1.3"/>
+    <path d="M11 109V40c0-16 13-29 29-29h69" fill="none" stroke="currentColor" stroke-width=".7" opacity=".6"/>
+    <path d="M18 96c1-24 10-42 30-54s38-20 54-21" fill="none" stroke="currentColor" stroke-width="1"/>
+    <path d="M27 70c-7-2-11-8-11-15 7 1 11 7 11 15z"/>
+    <path d="M30 60c7-3 10-9 9-16-6 3-9 9-9 16z"/>
+    <path d="M44 44c-6-5-7-12-4-18 5 4 7 11 4 18z"/>
+    <path d="M52 39c8 0 13-5 15-11-7-1-13 3-15 11z"/>
+    <path d="M70 29c-4-6-3-13 1-17 3 5 3 12-1 17z"/>
+    <path d="M80 25c7 2 13-1 17-6-7-3-13-1-17 6z"/>
+    <g transform="translate(24 24)">
+      <path d="M0 7C-4 2-4-4 0-9 4-4 4 2 0 7z"/>
+      <path d="M0 7C-4 2-4-4 0-9 4-4 4 2 0 7z" transform="rotate(-42)" opacity=".8"/>
+      <path d="M0 7C-4 2-4-4 0-9 4-4 4 2 0 7z" transform="rotate(42)" opacity=".8"/>
+    </g>
+  </symbol>
+  <symbol id="rule" viewBox="0 0 240 20">
+    <path d="M0 10h96M144 10h96" fill="none" stroke="currentColor" stroke-width="1"/>
+    <path d="M100 10c6-1 10-3 12-6M140 10c-6-1-10-3-12-6M100 10c6 1 10 3 12 6M140 10c-6 1-10 3-12 6" fill="none" stroke="currentColor" stroke-width=".9"/>
+    <path d="M120 17c-5-3-6-9-0-15 6 6 5 12 0 15z"/>
+    <path d="M120 17c-6-1-10-5-10-10 5 1 9 5 10 10zM120 17c6-1 10-5 10-10-5 1-9 5-10 10z" opacity=".75"/>
+  </symbol>
+</svg>
+
+<header class="top">
+  <div class="wrap top__in">
+    <a class="brand" href="./"><img src="../assets/logo-light.svg" alt="" width="44" height="44"><b translate="no">ІСККОН ЧЕРНІВЦІ</b></a>
+    <nav class="nav" aria-label="Головне меню">
+      <a href="./" aria-current="page">Головна</a>
+      <a href="../courses/">Навчання</a>
+      <a href="../food/">Їжа життя</a>
+      <a href="../donation/">Пожертви</a>
+    </nav>
+    <p class="top__phones"><a href="tel:+380633117500">063-311-7500</a><a href="tel:+380951440568">095-144-0568</a></p>
+    <!-- перемикач мов у макеті декоративний (ТЗ стилю 3): лише показує, де він буде -->
+    <p class="langs" aria-hidden="true"><span class="is-on">UK</span><span>EN</span><span>RO</span></p>
+    <details class="menu">
+      <summary>Меню</summary>
+      <div class="menu__panel">
+        <nav aria-label="Меню">
+          <a href="./" aria-current="page">Головна</a>
+          <a href="../courses/">Навчання</a>
+          <a href="../food/">Їжа життя</a>
+          <a href="../donation/">Пожертви</a>
+        </nav>
+        <p class="menu__phones"><a href="tel:+380633117500">063-311-7500</a><a href="tel:+380951440568">095-144-0568</a></p>
+      </div>
+    </details>
+  </div>
+</header>
+
+<section class="hero" aria-labelledby="hero-title">
+  <figure class="hero__art">
+    <div class="framed hero__frame">
+    <img src="img/pilot-kirtan-painting.webp" width="1920" height="1280" fetchpriority="high" decoding="async"
+      alt="Живопис за фото громади: троє відданих на кіртані — фісгармонія й каратали">
+    <svg class="corner corner--tl" aria-hidden="true" focusable="false"><use href="#vine"/></svg>
+    <svg class="corner corner--tr" aria-hidden="true" focusable="false"><use href="#vine"/></svg>
+    <svg class="corner corner--bl" aria-hidden="true" focusable="false"><use href="#vine"/></svg>
+    <svg class="corner corner--br" aria-hidden="true" focusable="false"><use href="#vine"/></svg>
+    </div>
+    <figcaption>Картина-пілот за реальним фото громади</figcaption>
+  </figure>
+  <div class="wrap hero__text">
+    <div class="hero__title">
+      <p class="kicker">Чернівці · ІСККОН</p>
+      <h1 id="hero-title" class="gilded">Простір внутрішнього спокою</h1>
+    </div>
+    <div class="hero__body">
+      <p class="hero__lede">Центр ведичної культури: недільні фестивалі, лекції з філософії,
+        мантра-медитація, курси кулінарії та музики, благодійні обіди «Їжа життя».
+        Приходьте — тут вам завжди раді.</p>
+      <p class="hero__when">Щонеділі о 13:30 · вул. Скальда (Комарова), 40А · вхід вільний</p>
+      <p><a class="btn" href="#schedule">Прийти в неділю</a></p>
+    </div>
+  </div>
+  <svg class="rule" aria-hidden="true" focusable="false"><use href="#rule"/></svg>
+</section>
+
+<main id="main">
+
+  <section class="sec scene-2 sched" id="schedule" aria-labelledby="sched-title">
+    <div class="wrap">
+      <div class="sec__head">
+        <h2 id="sched-title" class="gilded h2">О котрій усе починається — і скільки це триває?</h2>
+        <p class="sub">Кожної неділі зустрічаємось у нашому центрі в атмосфері духовності та злагоди</p>
+      </div>
+      <div class="sched__grid">
+        <ol class="day">
+          <li><span class="t">13:30</span><span class="what"><b>Кіртан</b> — оспівування маха-мантри</span></li>
+          <li><span class="t">14:00</span><span class="what"><b>Катха</b> — лекція з ведичної філософії</span></li>
+          <li><span class="t">15:15</span><span class="what"><b>Кіртан</b> — оспівування маха-мантри</span></li>
+          <li><span class="t">16:00</span><span class="what"><b>Прасад</b> — вегетаріанський бенкет</span></li>
+          <li><span class="t">17:30</span><span class="what"><b>Неформальне спілкування</b> — відповіді на питання</span></li>
+        </ol>
+        <div class="sat framed">
+          <svg class="corner corner--tl" aria-hidden="true" focusable="false"><use href="#vine"/></svg>
+          <svg class="corner corner--br" aria-hidden="true" focusable="false"><use href="#vine"/></svg>
+          <h3>Суботня ранкова програма</h3>
+          <ol>
+            <li><span class="t">08:00</span><span><b>Мангала-араті</b> <em>(ранкова служба)</em></span></li>
+            <li><span class="t">09:00</span><span>Лекція зі Шрімад-Бгаґаватам</span></li>
+            <li><span class="t">10:00</span><span>Сніданок</span></li>
+          </ol>
+        </div>
+      </div>
+      <p class="note">Святкові програми за вайшнавським календарем та дні посту Екадаші —
+        слідкуйте за оголошеннями в <a href="https://t.me/+bGy8LgS8jTQ0YzNi" target="_blank" rel="noopener">Telegram</a>.</p>
+    </div>
+  </section>
+
+  <section class="sec paper" aria-labelledby="steps-title">
+    <div class="wrap steps-wrap">
+      <div class="steps__head">
+        <h2 id="steps-title" class="h2">Що буде, коли я зайду всередину?</h2>
+        <p class="sub">Якщо ви вперше — ось три прості дії</p>
+      </div>
+      <ol class="steps">
+        <li><h3>Прийдіть у неділю</h3><p>Просто прийдіть о 13:30. Нічого не треба знати чи вміти. Посидьте, послухайте, поїжте.</p></li>
+        <li><h3>Візьміть книгу</h3><p>«Бгаґавад-Ґіта як вона є» — почніть з неї. У храмі є безкоштовні брошури для новачків.</p></li>
+        <li><h3>Спробуйте мантру</h3><p>Повторюйте «Харе Крішна» кілька хвилин вранці. Відчуйте різницю самі.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="sec scene courses" aria-labelledby="courses-title">
+    <div class="wrap">
+      <div class="sec__head">
+        <h2 id="courses-title" class="gilded h2">Навчання</h2>
+        <p class="sub">Курси ведичної філософії, кулінарії та гри на традиційних інструментах.</p>
+      </div>
+      <div class="cards">
+        <article class="card framed">
+          <svg class="corner corner--tl" aria-hidden="true" focusable="false"><use href="#vine"/></svg>
+          <svg class="corner corner--br" aria-hidden="true" focusable="false"><use href="#vine"/></svg>
+          <h3>Ведична філософія</h3>
+          <p>Глибоке занурення у ведичну мудрість — для тих, хто хоче розібратися
+            в духовній науці та знайти відповіді на головні питання життя:</p>
+          <ul>
+            <li><b>Хто Я?</b> — краще зрозуміти себе</li>
+            <li><b>Основи ведичної філософії</b> — Бгаґавад-ґіта, карма, реінкарнація</li>
+            <li><b>Бгакті-шастри</b> — поглиблене вивчення священних текстів</li>
+          </ul>
+        </article>
+        <article class="card framed">
+          <svg class="corner corner--tl" aria-hidden="true" focusable="false"><use href="#vine"/></svg>
+          <svg class="corner corner--br" aria-hidden="true" focusable="false"><use href="#vine"/></svg>
+          <h3>Ведична кулінарія</h3>
+          <p>Мистецтво приготування смачної та корисної їжі. На практичних заняттях дізнаєтесь:</p>
+          <ul>
+            <li>Як готувати корисні та надзвичайно смачні вегетаріанські страви</li>
+            <li>Секрети використання спецій у кулінарії</li>
+            <li>Як перетворити готування на духовну практику</li>
+          </ul>
+        </article>
+        <article class="card framed">
+          <svg class="corner corner--tl" aria-hidden="true" focusable="false"><use href="#vine"/></svg>
+          <svg class="corner corner--br" aria-hidden="true" focusable="false"><use href="#vine"/></svg>
+          <h3>Музичні інструменти</h3>
+          <p>Кіртан — серце нашої духовної практики. Уроки гри на традиційних інструментах:</p>
+          <ul>
+            <li><b>Каратали</b> — ручні цимбали, тримання ритму</li>
+            <li><b>Мріданг</b> — традиційний бенгальський барабан</li>
+            <li><b>Фісгармонія</b> — вивчення мелодій</li>
+          </ul>
+        </article>
+      </div>
+      <p class="more"><a class="arrow-link" href="../courses/">Обрати курс →</a></p>
+    </div>
+  </section>
+
+  <section class="sec scene-2 community" aria-labelledby="community-title">
+    <div class="wrap">
+      <div class="sec__head">
+        <h2 id="community-title" class="gilded h2">Спільнота</h2>
+        <p class="sub">Це простір для всіх, хто хоче більше миру в серці та ясності в житті.</p>
+      </div>
+      <!-- місця під майбутні картини за IMAGE_PROMPT_TEMPLATE.md; фото людей тут не ставимо -->
+      <ul class="canvases">
+        <li class="canvas framed" data-painting-slot="1">
+          <svg class="corner corner--tl" aria-hidden="true" focusable="false"><use href="#vine"/></svg>
+          <svg class="corner corner--tr" aria-hidden="true" focusable="false"><use href="#vine"/></svg>
+          <svg class="corner corner--bl" aria-hidden="true" focusable="false"><use href="#vine"/></svg>
+          <svg class="corner corner--br" aria-hidden="true" focusable="false"><use href="#vine"/></svg>
+          <span>Картина в роботі</span>
+        </li>
+        <li class="canvas framed" data-painting-slot="2">
+          <svg class="corner corner--tl" aria-hidden="true" focusable="false"><use href="#vine"/></svg>
+          <svg class="corner corner--tr" aria-hidden="true" focusable="false"><use href="#vine"/></svg>
+          <svg class="corner corner--bl" aria-hidden="true" focusable="false"><use href="#vine"/></svg>
+          <svg class="corner corner--br" aria-hidden="true" focusable="false"><use href="#vine"/></svg>
+          <span>Картина в роботі</span>
+        </li>
+        <li class="canvas framed" data-painting-slot="3">
+          <svg class="corner corner--tl" aria-hidden="true" focusable="false"><use href="#vine"/></svg>
+          <svg class="corner corner--tr" aria-hidden="true" focusable="false"><use href="#vine"/></svg>
+          <svg class="corner corner--bl" aria-hidden="true" focusable="false"><use href="#vine"/></svg>
+          <svg class="corner corner--br" aria-hidden="true" focusable="false"><use href="#vine"/></svg>
+          <span>Картина в роботі</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec scene food" aria-labelledby="food-title">
+    <div class="wrap food__grid">
+      <div class="food__when">
+        <p class="kicker">Їжа життя</p>
+        <p class="food__time"><span>щосуботи</span> <b>14:00</b></p>
+        <p class="food__place">Соборна площа</p>
+      </div>
+      <div class="food__text">
+        <h2 id="food-title" class="gilded h2">Потрібна їжа просто зараз — куди мені звернутися?</h2>
+        <p>Благодійні гарячі вегетаріанські обіди щосуботи. Долучайтесь як волонтер!</p>
+        <p class="food__contact"><b>Роман Гунчак:</b> <a href="tel:+380503740334">050-374-0334</a><br>
+          <span>Telegram, Viber, WhatsApp</span></p>
+        <p><a class="arrow-link" href="../food/">Детальніше →</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec paper reviews" aria-labelledby="rev-title">
+    <div class="wrap">
+      <h2 id="rev-title" class="h2">Відгуки відданих і учасників громади</h2>
+      <div class="quotes">
+        <figure class="quote quote--lead"><blockquote>«Прекрасне місце для тих, хто в пошуку духовної істини. Надзвичайно світлі, привітні і доброзичливі люди, в наші дні таких мало де зараз можна зустріти. Рекомендую кожному!»</blockquote><figcaption>Ірина Михайлюк</figcaption></figure>
+        <figure class="quote"><blockquote>«Прекрасне місце, де панує атмосфера доброзичливості і радості! Всі віддані Крішни привітні, світлі і позитивні. Всіх гостей частують смачним прасадом.»</blockquote><figcaption>Мирослав Руснак</figcaption></figure>
+        <figure class="quote"><blockquote>«Дуже смачна їжа, потужна філософія, гарна компанія, краще місце де мені доводилось бути.»</blockquote><figcaption>Єгор Поплавський</figcaption></figure>
+      </div>
+      <p class="more"><a class="arrow-link" href="https://maps.app.goo.gl/rz1nyMWUVKGSP29Z6" target="_blank" rel="noopener">Читати всі відгуки</a></p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot scene-2" id="contacts">
+  <svg class="rule" aria-hidden="true" focusable="false"><use href="#rule"/></svg>
+  <div class="wrap foot__grid">
+    <div class="foot__contact">
+      <h2 class="gilded foot__addr">вул. Скальда (Комарова), 40А, Чернівці</h2>
+      <p class="foot__phones"><a href="tel:+380633117500">063-311-7500</a>, <a href="tel:+380951440568">095-144-0568</a></p>
+      <p class="foot__links">
+        <a class="btn btn--line" href="https://maps.app.goo.gl/rz1nyMWUVKGSP29Z6" target="_blank" rel="noopener">Прокласти маршрут</a>
+        <a class="btn btn--line" href="https://t.me/+bGy8LgS8jTQ0YzNi" target="_blank" rel="noopener">Telegram</a>
+      </p>
+    </div>
+    <nav class="foot__nav" aria-label="Меню в підвалі">
+      <a href="./">Головна</a>
+      <a href="../courses/">Навчання</a>
+      <a href="../food/">Їжа життя</a>
+      <a href="../donation/">Пожертви</a>
+    </nav>
+    <img class="foot__logo" src="../assets/logo-light.svg" alt="" width="80" height="80" loading="lazy" decoding="async">
+    <p class="foot__legal">РО «Релігійна громада свідомості Крішни в місті Чернівці» · ЄДРПОУ 46285356</p>
+  </div>
+</footer>
+</body>
+</html>
