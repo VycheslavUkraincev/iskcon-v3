@@ -106,6 +106,14 @@ p:last-child{margin-bottom:0}
 .arrow-link:hover{text-decoration-color:currentColor}
 .prose a:not(.btn):not(.arrow-link){text-decoration-color:var(--marigold);text-decoration-thickness:1.5px;text-underline-offset:.22em}
 
+/* ── смуга стилів: три макети головної, над шапкою ── */
+.styles{background:var(--sandal);border-bottom:1px solid var(--line);font-size:.88rem}
+.styles__in{display:flex;align-items:center;justify-content:flex-end;gap:4px}
+.styles__label{color:var(--ink-2);margin-right:8px}
+.styles a{display:inline-flex;align-items:center;min-height:44px;padding:0 12px;color:var(--ink-2);text-decoration:none;transition:color var(--t1) var(--ease-out)}
+.styles a:hover{color:var(--ink)}
+.styles a[aria-current="page"]{color:var(--ink);font-weight:600;text-decoration:underline;text-decoration-color:var(--marigold);text-decoration-thickness:2px;text-underline-offset:.3em}
+
 /* ── шапка: один ряд ── */
 .top{position:sticky;top:0;z-index:50;background:var(--lime);border-bottom:1px solid var(--line)}
 .top__in{display:flex;align-items:center;gap:24px;height:64px}
@@ -392,6 +400,9 @@ p:last-child{margin-bottom:0}
   .path--food{grid-column:8 / span 5}
 }
 @media (max-width: 860px){
+  .styles__in{justify-content:space-between;gap:0}
+  .styles__label{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+  .styles a{padding:0 8px}
   .top__in{height:56px;gap:8px}
   .brand{gap:8px}
   .brand img{width:34px;height:34px}
@@ -460,6 +471,6 @@ p:last-child{margin-bottom:0}
 }
 
 @media print{
-  .top,.menu-btn,.langs,.map__frame,.next,.lb{display:none!important}
+  .top,.styles,.menu-btn,.langs,.map__frame,.next,.lb{display:none!important}
   body,.on-leaf,.on-sandal{background:var(--print-paper);color:var(--print-ink)}
 }

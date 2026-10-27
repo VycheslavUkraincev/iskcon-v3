@@ -30,6 +30,10 @@ function syncTheme(){
   var on = isShyama();
   if (themeBtn) themeBtn.setAttribute("aria-pressed", on ? "true" : "false");
   if (themeMeta) themeMeta.setAttribute("content", on ? THEME_COLOR.shyama : THEME_COLOR.light);
+  document.querySelectorAll(".styles [data-style]").forEach(function(a){
+    if (a.getAttribute("data-style") === (on ? "shyama" : "light")) a.setAttribute("aria-current", "page");
+    else a.removeAttribute("aria-current");
+  });
 }
 function applyTheme(on){
   if (on) root.setAttribute("data-theme", "shyama"); else root.removeAttribute("data-theme");

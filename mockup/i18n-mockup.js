@@ -1,12 +1,14 @@
-/* Рядки, яких немає в assets/i18n-dict.js: лише перемикач теми макета.
+/* Рядки, яких немає в assets/i18n-dict.js: перемикач теми й смуга стилів макета.
    Словник сайту не змінюємо — доповнюємо глобальний I18N до запуску assets/i18n.js.
    Переклади EN/RO чорнові, потребують вичитки носієм (див. SHYAMA.md). */
 (function(){
 "use strict";
 if (typeof I18N === "undefined") return;
 var add = {
-  en: { "Тема «Шьяма»": "Shyama theme", "Шьяма": "Shyama" },
-  ro: { "Тема «Шьяма»": "Tema „Shyama”", "Шьяма": "Shyama" }
+  en: { "Тема «Шьяма»": "Shyama theme", "Шьяма": "Shyama",
+        "Стиль макета": "Mockup style", "Стиль макета:": "Mockup style:", "Світла": "Light", "Жива картина": "Living painting" },
+  ro: { "Тема «Шьяма»": "Tema „Shyama”", "Шьяма": "Shyama",
+        "Стиль макета": "Stilul machetei", "Стиль макета:": "Stilul machetei:", "Світла": "Luminoasă", "Жива картина": "Pictura vie" }
 };
 Object.keys(add).forEach(function(l){
   if (!I18N[l]) return;

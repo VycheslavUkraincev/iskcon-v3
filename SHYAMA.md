@@ -61,6 +61,11 @@
 |---|---|---|
 | Тема «Шьяма» | Shyama theme | Tema „Shyama” |
 | Шьяма | Shyama | Shyama |
+| Стиль макета / Стиль макета: | Mockup style / Mockup style: | Stilul machetei / Stilul machetei: |
+| Світла | Light | Luminoasă |
+| Жива картина | Living painting | Pictura vie |
+
+Строки «Стиль макета», «Світла», «Жива картина» — смуга над шапкою, що веде між трьома макетами (`./?theme=light`, `./?theme=shyama`, `../mockup-style3/`); поточний стиль позначає `mockup.js` через `aria-current`.
 
 **Статус: черновик, не окончательный.** EN и RO должен вычитать носитель. В частности, для RO нужно решить транслитерацию: «Shyama» или «Șyama/Śyāma».
 

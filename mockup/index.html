@@ -25,7 +25,7 @@
 <link rel="preload" as="image" type="image/webp" fetchpriority="high"
   imagesrcset="../assets/temple/hero-640.webp 640w, ../assets/temple/hero-768.webp 768w, ../assets/temple/hero-960.webp 960w, ../assets/temple/hero-1280.webp 1280w, ../assets/temple/hero-1920.webp 1920w"
   imagesizes="(max-width:860px) 100vw, 50vw">
-<script>document.documentElement.classList.add("js");try{if(localStorage.getItem("mockup-theme")==="shyama")document.documentElement.setAttribute("data-theme","shyama")}catch(e){}</script>
+<script>document.documentElement.classList.add("js");try{var q=new URLSearchParams(location.search).get("theme");if(q==="shyama"||q==="light")localStorage.setItem("mockup-theme",q);if(localStorage.getItem("mockup-theme")==="shyama")document.documentElement.setAttribute("data-theme","shyama")}catch(e){}</script>
 <link rel="stylesheet" href="mockup.css">
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../assets/favicon-32.png" sizes="32x32" type="image/png">
@@ -52,6 +52,16 @@
 </head>
 <body>
 <a class="skip" href="#main">Перейти до вмісту</a>
+
+<!-- перемикач між трьома макетами головної; поточний стиль позначає mockup.js (без JS — світла) -->
+<nav class="styles" aria-label="Стиль макета">
+  <div class="wrap styles__in">
+    <span class="styles__label">Стиль макета:</span>
+    <a href="./?theme=light" data-style="light" aria-current="page">Світла</a>
+    <a href="./?theme=shyama" data-style="shyama">Шьяма</a>
+    <a href="../mockup-style3/">Жива картина</a>
+  </div>
+</nav>
 
 <header class="top">
   <div class="wrap top__in">
