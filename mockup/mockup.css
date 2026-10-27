@@ -607,6 +607,13 @@ html:not(.js) .place__card img[data-src]{display:none}
 .donate-modal-foot{padding:12px 20px;border-top:1px solid var(--line);font-size:.85rem;color:var(--ink-2)}
 .donate-modal-foot a{color:var(--ink);display:inline-block;padding-block:6px}
 
+/* ═════════ 404 ═════════ */
+.not-found{border-bottom:0;min-height:min(calc(100svh - 108px), 640px);display:flex;align-items:center}
+.not-found .page-hero__in{width:100%}
+.not-found__code{font:500 clamp(4.5rem,12vw,9rem)/.9 var(--serif);color:var(--marigold-ink);margin:0 0 20px;letter-spacing:-.03em;font-variant-numeric:lining-nums}
+.not-found__cta{margin:32px 0 0}
+.not-found__ticket{margin:0;max-width:60ch}
+
 /* ── тема «Шьяма»: не інверсія — власна сцена. Лише на екрані; друк завжди світлий ── */
 @media screen{
   [data-theme="shyama"]{
