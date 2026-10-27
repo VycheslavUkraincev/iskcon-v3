@@ -1,4 +1,4 @@
-/* Макет головної: меню, лайтбокс галереї, фірмовий рух «Неділя розгортається».
+/* Макет головної: меню, тема «Шьяма», лайтбокс галереї, фірмовий рух «Неділя розгортається».
    GSAP і ScrollTrigger беруться з ../assets/vendor/gsap/ і вантажаться лише після load
    і лише без prefers-reduced-motion: reduce. Без JS сторінка повна й статична. */
 (function(){
@@ -16,6 +16,34 @@ if (btn && nav){
   nav.addEventListener("click", function(e){ if (e.target.closest("a")) setMenu(false); });
   document.addEventListener("keydown", function(e){
     if (e.key === "Escape" && btn.getAttribute("aria-expanded") === "true"){ setMenu(false); btn.focus(); }
+  });
+}
+
+/* ── тема «Шьяма»: data-theme на <html>, вибір у localStorage. Без JS кнопки немає, сторінка світла.
+   Сам атрибут ставить вбудований скрипт у <head> ще до першого кадру, тут — лише кнопка й перемикання. ── */
+var root = document.documentElement;
+var themeBtn = document.querySelector(".theme-btn");
+var themeMeta = document.querySelector('meta[name="theme-color"]');
+var THEME_COLOR = { light: "#F9F7F0", shyama: "#070F1E" };
+function isShyama(){ return root.getAttribute("data-theme") === "shyama"; }
+function syncTheme(){
+  var on = isShyama();
+  if (themeBtn) themeBtn.setAttribute("aria-pressed", on ? "true" : "false");
+  if (themeMeta) themeMeta.setAttribute("content", on ? THEME_COLOR.shyama : THEME_COLOR.light);
+}
+function applyTheme(on){
+  if (on) root.setAttribute("data-theme", "shyama"); else root.removeAttribute("data-theme");
+  try { localStorage.setItem("mockup-theme", on ? "shyama" : "light"); } catch(e){}
+  syncTheme();
+}
+syncTheme();
+if (themeBtn){
+  themeBtn.addEventListener("click", function(){
+    var on = !isShyama();
+    /* тиха зміна сцени: перехресне згасання, якщо браузер уміє і рух не вимкнено */
+    if (document.startViewTransition && !window.matchMedia("(prefers-reduced-motion: reduce)").matches){
+      document.startViewTransition(function(){ applyTheme(on); });
+    } else applyTheme(on);
   });
 }
 
@@ -67,7 +95,6 @@ function start(){
       gsap.registerPlugin(window.ScrollTrigger);
       var mm = gsap.matchMedia();
       mm.add("(prefers-reduced-motion: no-preference)", function(){
-        var root = document.documentElement;
         root.classList.add("js-motion");
         gsap.fromTo(".day__fill", { scaleY: 0 }, {
           scaleY: 1, ease: "none",
