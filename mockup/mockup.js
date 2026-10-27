@@ -1,8 +1,11 @@
-/* Макет головної: меню, тема «Шьяма», лайтбокс галереї, фірмовий рух «Неділя розгортається».
-   GSAP і ScrollTrigger беруться з ../assets/vendor/gsap/ і вантажаться лише після load
-   і лише без prefers-reduced-motion: reduce. Без JS сторінка повна й статична. */
+/* Спільний скрипт макета (усі сторінки): меню, тема «Шьяма», лайтбокс, фірмовий рух «Неділя розгортається».
+   GSAP і ScrollTrigger беруться з assets/vendor/gsap/ поруч із mockup/ і вантажаться лише після load,
+   лише без prefers-reduced-motion: reduce і лише там, де є розклад (.day). Без JS сторінки повні й статичні. */
 (function(){
 "use strict";
+/* шлях до assets/ рахуємо від адреси самого скрипта: mockup.js лежить у mockup/, сторінки — на різній глибині */
+var SELF = document.currentScript && document.currentScript.src;
+function asset(path){ return SELF ? new URL("../assets/" + path, SELF).href : "../assets/" + path; }
 
 /* ── меню на вузьких екранах ── */
 var btn = document.querySelector(".menu-btn");
@@ -51,9 +54,17 @@ if (themeBtn){
   });
 }
 
+/* ── пожертви: без JS посилання з data-donate веде просто на WayForPay; з JS — не переходимо,
+   бо той самий клік відкриває вікно оплати з assets/donation.js ── */
+if (document.getElementById("donateModal")){
+  document.addEventListener("click", function(e){
+    if (e.target.closest && e.target.closest("a[data-donate]")) e.preventDefault();
+  }, true);
+}
+
 /* ── лайтбокс: повне фото з посилання, підпис = alt (його вже переклав i18n.js) ── */
 var dlg = document.querySelector(".lb");
-var links = Array.prototype.slice.call(document.querySelectorAll(".gal a"));
+var links = Array.prototype.slice.call(document.querySelectorAll(".gal a, [data-lightbox] a"));
 if (dlg && typeof dlg.showModal === "function" && links.length){
   var img = dlg.insertBefore(document.createElement("img"), dlg.firstChild), cap = dlg.querySelector(".lb__cap"), cur = 0, opener = null;
   var show = function(i){
@@ -92,8 +103,8 @@ function load(src){
   });
 }
 function start(){
-  load("../assets/vendor/gsap/gsap.min.js")
-    .then(function(){ return load("../assets/vendor/gsap/ScrollTrigger.min.js"); })
+  load(asset("vendor/gsap/gsap.min.js"))
+    .then(function(){ return load(asset("vendor/gsap/ScrollTrigger.min.js")); })
     .then(function(){
       var gsap = window.gsap;
       gsap.registerPlugin(window.ScrollTrigger);

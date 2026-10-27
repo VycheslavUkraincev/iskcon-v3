@@ -329,6 +329,76 @@ p:last-child{margin-bottom:0}
 .lb__bar button:hover{background:var(--leaf-2)}
 .lb__cap{min-width:12ch;text-align:center;font-size:.95rem;color:var(--on-leaf-2)}
 
+/* ═════════ внутрішні сторінки: спільні частини ═════════ */
+/* іконки — маски з assets/icons/ui, колір = currentColor (assets/food.js сам додає .ico.ico-bowl у віджет) */
+.ico{display:inline-block;width:1.15em;height:1.15em;vertical-align:-.2em;flex:none;background:currentColor;-webkit-mask:var(--i) center/contain no-repeat;mask:var(--i) center/contain no-repeat}
+.ico-bowl{--i:url(../assets/icons/ui/bowl.svg)}.ico-pin{--i:url(../assets/icons/ui/pin.svg)}.ico-clock{--i:url(../assets/icons/ui/clock.svg)}
+.ico-heart{--i:url(../assets/icons/ui/heart.svg)}.ico-card{--i:url(../assets/icons/ui/card.svg)}.ico-phone{--i:url(../assets/icons/ui/phone.svg)}
+.ico-basket{--i:url(../assets/icons/ui/basket.svg)}.ico-knife{--i:url(../assets/icons/ui/knife.svg)}.ico-broom{--i:url(../assets/icons/ui/broom.svg)}
+.ico-truck{--i:url(../assets/icons/ui/truck.svg)}.ico-play{--i:url(../assets/icons/ui/play.svg)}.ico-home{--i:url(../assets/icons/ui/home.svg)}
+.ico-bulb{--i:url(../assets/icons/ui/bulb.svg)}.ico-lotus{--i:url(../assets/icons/ui/lotus.svg)}.ico-book{--i:url(../assets/icons/ui/book.svg)}
+.ico-wrench{--i:url(../assets/icons/ui/wrench.svg)}.ico-lock{--i:url(../assets/icons/ui/lock.svg)}
+
+.sec--tight{padding-top:clamp(40px,6vw,80px)}
+.note{color:var(--ink-2);font-size:.95rem}
+.on-leaf .note{color:var(--on-leaf-2)}
+
+/* шапка сторінки: редакційний спліт, як hero головної, але без фото */
+.page-hero{padding-block:clamp(56px,8vw,112px) clamp(32px,4vw,56px);border-bottom:1px solid var(--line)}
+.page-hero__in{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:32px var(--gut);align-items:end}
+.page-hero__text{grid-column:1 / span 7}
+.page-hero h1{font-size:clamp(2.6rem,5.6vw,4.8rem);line-height:1.02;letter-spacing:-.02em;max-width:14ch}
+.page-hero .lead{margin:24px 0 0;color:var(--ink-2)}
+.toc{grid-column:9 / span 4}
+.toc ol{list-style:none;margin:0;padding:0;counter-reset:t}
+.toc li{counter-increment:t;border-top:1px solid var(--line)}
+.toc li:last-child{border-bottom:1px solid var(--line)}
+.toc a{display:flex;align-items:baseline;gap:16px;min-height:52px;padding:12px 0;text-decoration:none;font:500 1.2rem/1.25 var(--serif)}
+.toc a::before{content:counter(t, decimal-leading-zero);font:600 .85rem/1 var(--sans);color:var(--marigold-ink);font-variant-numeric:tabular-nums}
+.toc a:hover{text-decoration:underline;text-decoration-color:var(--marigold);text-underline-offset:.22em}
+
+/* стрічка-цитата між сценами */
+.band{padding-block:clamp(56px,8vw,104px);border-top:1px solid var(--line)}
+.band__line{font:400 italic clamp(1.6rem,3.4vw,2.8rem)/1.25 var(--serif);max-width:26ch;margin:0}
+
+/* ═════════ /courses ═════════ */
+.courses{display:flex;flex-direction:column}
+.course{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:32px var(--gut);align-items:start;padding-block:clamp(40px,5vw,72px);border-top:1px solid var(--line)}
+.course:first-child{border-top:0;padding-top:0}
+.course__img{grid-column:1 / span 5;margin:0;border-radius:var(--r-s);overflow:hidden;background:var(--sandal-2);aspect-ratio:4 / 3}
+.course__img img{width:100%;height:100%;object-fit:cover}
+.course:nth-child(3) .course__img img{object-position:50% 30%}
+/* обкладинка книги — цілою, на сандалі, а не обрізаним кадром */
+.course__img--book{display:flex;align-items:center;justify-content:center}
+.course__img--book img{width:auto;height:78%;object-fit:contain;border-radius:2px;box-shadow:0 18px 40px -22px var(--ink)}
+.course__body{grid-column:7 / span 6}
+.course__num{font:600 .9rem/1 var(--sans);letter-spacing:.08em;color:var(--marigold-ink);margin:0 0 14px;font-variant-numeric:tabular-nums}
+.course h2{font-size:clamp(1.9rem,3.2vw,2.6rem);line-height:1.1;margin-bottom:18px}
+.course__body > p{color:var(--ink-2);max-width:56ch}
+.course .ruled{margin:20px 0 28px}
+.course .ruled li{color:var(--ink-2)}
+.course .ruled b{color:var(--ink);font-weight:600}
+.signup{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:32px var(--gut);align-items:end;margin-top:clamp(40px,5vw,72px);padding:clamp(32px,4vw,56px);background:var(--sandal);border-radius:var(--r-m)}
+.signup__text{grid-column:1 / span 7}
+.signup__text .h2{margin-bottom:16px}
+.signup__phones{font:500 clamp(1.6rem,2.8vw,2.2rem)/1.3 var(--serif);margin:8px 0 8px}
+.signup__phones a{display:inline-block;padding-block:4px;text-decoration-color:var(--marigold);text-underline-offset:.18em;font-variant-numeric:lining-nums tabular-nums}
+.signup__actions{grid-column:8 / span 5;display:flex;flex-wrap:wrap;gap:12px;justify-content:flex-end}
+.shelf__head{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px var(--gut);margin-bottom:clamp(40px,5vw,64px)}
+.shelf__head .h2{grid-column:1 / span 6}
+.shelf__head .sub{grid-column:8 / span 5;align-self:end;margin:0}
+.shelf__row{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gut)}
+.shelf__book{display:flex;flex-direction:column;align-items:flex-start;gap:12px;padding-top:24px;border-top:1px solid var(--leaf-line)}
+.shelf__cover{display:block;border-radius:2px;box-shadow:0 22px 44px -26px var(--sh-deep);transition:transform var(--t2) var(--ease-out)}
+.shelf__cover:hover{transform:translateY(-4px)}
+.shelf__cover img{width:clamp(130px,14vw,190px);height:auto;border-radius:2px}
+.shelf__meta{margin:8px 0 0;display:flex;flex-direction:column;gap:2px}
+.shelf__meta b{font:500 1.35rem/1.2 var(--serif);color:var(--on-leaf)}
+.shelf__meta span{color:var(--on-leaf-2)}
+.shelf .arrow-link{color:var(--on-leaf)}
+.shelf__more{margin:40px 0 0;color:var(--on-leaf-2)}
+.shelf__more a{color:var(--on-leaf);text-decoration-color:var(--marigold);text-underline-offset:.22em}
+
 /* ── тема «Шьяма»: не інверсія — власна сцена. Лише на екрані; друк завжди світлий ── */
 @media screen{
   [data-theme="shyama"]{
@@ -453,6 +523,17 @@ p:last-child{margin-bottom:0}
   .review,.review:first-child{grid-column:1 / -1}
   .foot__contact,.foot__nav{grid-column:1 / -1}
   .foot__logo{grid-column:1 / -1;justify-self:start}
+  .page-hero__text,.toc{grid-column:1 / -1}
+  .course__img,.course__body{grid-column:1 / -1}
+  .course__img{aspect-ratio:16 / 10}
+  .signup__text,.signup__actions{grid-column:1 / -1}
+  .signup__actions{justify-content:flex-start}
+  .shelf__head .h2,.shelf__head .sub{grid-column:1 / -1}
+  .shelf__row{grid-template-columns:1fr;gap:0}
+  .shelf__book{display:grid;grid-template-columns:auto minmax(0,1fr);grid-template-rows:auto 1fr;column-gap:20px;align-items:start;padding-block:20px}
+  .shelf__cover{grid-row:span 2}
+  .shelf__cover img{width:96px}
+  .shelf__meta{margin:0}
   .gal{columns:2 140px;column-gap:8px}
   .gal a{margin-bottom:8px}
 }
