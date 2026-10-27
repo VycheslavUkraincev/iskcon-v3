@@ -548,6 +548,65 @@ html:not(.js) .place__card img[data-src]{display:none}
 .contacts__socials{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
 .contacts__socials img{width:20px;height:20px}
 
+/* ═════════ /donation ═════════ */
+.ways__grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--gut)}
+.ways__card{display:flex;flex-direction:column;align-items:flex-start;gap:14px;padding:clamp(28px,3.5vw,44px);border:1px solid var(--line);border-radius:var(--r-m)}
+.ways__card:first-child{background:var(--sandal);border-color:var(--sandal)}
+.ways__card > .ico{width:32px;height:32px;color:var(--marigold-ink)}
+.ways__card h3{font-size:clamp(1.6rem,2.6vw,2.1rem)}
+.ways__card p{color:var(--ink-2);max-width:46ch;margin:0 0 8px}
+.ways__more{margin-top:4px}
+.use__grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:32px var(--gut);align-items:start}
+.use__grid .h2{grid-column:1 / span 5}
+.use__body{grid-column:7 / span 6}
+.use__list{list-style:none;margin:0;padding:0}
+.use__list li{display:grid;grid-template-columns:28px minmax(0,1fr);gap:14px;align-items:center;padding:16px 0;border-top:1px solid var(--line);font-size:1.08rem}
+.use__list li:last-child{border-bottom:1px solid var(--line)}
+.use__list .ico{width:24px;height:24px;color:var(--marigold-ink)}
+.use__list em{color:var(--ink-2)}
+.use__more{margin:28px 0 0;font:400 italic clamp(1.25rem,2vw,1.55rem)/1.4 var(--serif);max-width:40ch}
+.use__more b{font-weight:500;font-style:normal}
+.impact__grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--gut);margin-top:32px}
+.impact__card{border-top:2px solid var(--marigold-ink);padding-top:16px}
+.impact__amount{font:500 2.4rem/1 var(--serif)}
+.give .h2{margin-bottom:clamp(32px,4vw,56px)}
+.give__grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--gut)}
+.give__card{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-rows:auto auto 1fr;gap:12px 28px;align-items:start;background:var(--leaf-2);border-radius:var(--r-m);padding:clamp(28px,3.5vw,44px)}
+.give__card h3{grid-column:1;font-size:clamp(1.5rem,2.4vw,2rem);color:var(--on-leaf)}
+.give__why{grid-column:1;color:var(--on-leaf-2);margin:0}
+.give__card .btn{grid-column:1;align-self:end;justify-self:start;margin-top:12px}
+.give__card .qr{grid-column:2;grid-row:1 / span 3}
+/* QR: файли не змінюємо — лише біла підкладка з полем тиші, щоб камера читала їх в обох темах */
+.qr{margin:0;text-align:center}
+.qr a{display:block;padding:10px;background:var(--print-paper);border-radius:var(--r-s);line-height:0}
+.qr img{width:clamp(120px,13vw,170px);height:auto;image-rendering:pixelated}
+.qr p{margin:10px 0 0;font-size:.85rem;color:var(--on-leaf-2);max-width:18ch;margin-inline:auto}
+.give__trust{display:flex;align-items:flex-start;gap:10px;margin:40px 0 0;color:var(--on-leaf);max-width:72ch}
+.give__trust .ico{flex:none;margin-top:4px;color:var(--marigold)}
+.give__hint{margin:12px 0 0;color:var(--on-leaf-2)}
+.give .note{margin:6px 0 0}
+.req-page{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:32px var(--gut);align-items:start}
+.req-page .h2{grid-column:1 / span 4}
+.req--page{grid-column:5 / span 8;background:var(--sandal)}
+.req__code--text{font-size:1.05rem;font-weight:500;letter-spacing:0;word-break:normal}
+.req__fail{margin:16px 0 0;color:var(--ink);font-weight:600}
+.req--page .note{margin:20px 0 0}
+.req--page .note a{color:var(--ink);text-decoration-color:var(--marigold);text-underline-offset:.22em;display:inline-block;padding-block:6px}
+/* вікно оплати WayForPay (assets/donation.js керує класом .open, фокусом, inert і Esc) */
+.donate-modal{position:fixed;inset:0;z-index:200;display:none;place-items:center;padding:16px;background:var(--veil)}
+.donate-modal.open{display:grid}
+.donate-modal-box{display:flex;flex-direction:column;width:min(560px,100%);height:min(86dvh,780px);background:var(--lime);color:var(--ink);border-radius:var(--r-m);overflow:hidden}
+.donate-modal-head{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 10px 10px 20px;border-bottom:1px solid var(--line)}
+.donate-modal-head b{font:500 1.25rem/1.2 var(--serif)}
+.donate-modal-close{min-width:44px;min-height:44px;border:1px solid var(--line);border-radius:50%;background:transparent;color:var(--ink);font:500 1.4rem/1 var(--sans);cursor:pointer}
+.donate-modal-frame{position:relative;flex:1;background:var(--print-paper)}
+.donate-modal-frame iframe{display:block;width:100%;height:100%;border:0}
+.donate-modal-loader{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:var(--lime);color:var(--ink-2)}
+.spin{width:32px;height:32px;border-radius:50%;border:3px solid var(--line);border-top-color:var(--marigold-ink);animation:spin 900ms linear infinite}
+@keyframes spin{to{transform:rotate(1turn)}}
+.donate-modal-foot{padding:12px 20px;border-top:1px solid var(--line);font-size:.85rem;color:var(--ink-2)}
+.donate-modal-foot a{color:var(--ink);display:inline-block;padding-block:6px}
+
 /* ── тема «Шьяма»: не інверсія — власна сцена. Лише на екрані; друк завжди світлий ── */
 @media screen{
   [data-theme="shyama"]{
@@ -686,6 +745,8 @@ html:not(.js) .place__card img[data-src]{display:none}
   .report,.media-video{grid-column:1 / -1}
   .widget,.req{grid-column:1 / -1}
   .contacts__grid .h2,.contacts__body{grid-column:1 / -1}
+  .ways__grid,.give__grid,.impact__grid{grid-template-columns:1fr}
+  .use__grid .h2,.use__body,.req-page .h2,.req--page{grid-column:1 / -1}
   .page-hero__text,.toc{grid-column:1 / -1}
   .course__img,.course__body{grid-column:1 / -1}
   .course__img{aspect-ratio:16 / 10}
@@ -702,6 +763,8 @@ html:not(.js) .place__card img[data-src]{display:none}
 }
 @media (max-width: 560px){
   .facts__cards{grid-template-columns:1fr}
+  .give__card{grid-template-columns:1fr}
+  .give__card .qr{grid-column:1;grid-row:auto;justify-self:start;margin-top:12px}
   /* IBAN — 29 знаків одним рядком навіть на 375: рядок не змінюємо, лише кегль і поля картки */
   .widget,.req{padding:24px 18px}
   .req__code--iban{font-size:1rem;letter-spacing:0;word-break:normal;white-space:nowrap}
