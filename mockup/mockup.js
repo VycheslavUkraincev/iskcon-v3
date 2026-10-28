@@ -33,7 +33,6 @@ function syncTheme(){
   var on = isShyama();
   if (themeBtn) themeBtn.setAttribute("aria-pressed", on ? "true" : "false");
   if (themeMeta) themeMeta.setAttribute("content", on ? THEME_COLOR.shyama : THEME_COLOR.light);
-  if (lotus) lotus.sync();
   document.querySelectorAll(".styles [data-style]").forEach(function(a){
     if (a.getAttribute("data-style") === (on ? "shyama" : "light")) a.setAttribute("aria-current", "page");
     else a.removeAttribute("aria-current");
@@ -43,52 +42,6 @@ function applyTheme(on){
   if (on) root.setAttribute("data-theme", "shyama"); else root.removeAttribute("data-theme");
   try { localStorage.setItem("mockup-theme", on ? "shyama" : "light"); } catch(e){}
   syncTheme();
-  if (on && lotus) lotus.unfold();
-}
-
-/* ── «Шьяма»: фото вівтаря в лотосі. Фото змінюються повільним розчиненням (CSS), бутон розкривається
-   через GSAP (нижче). Автозміна понад 5 с — тому кнопка «Пауза» (WCAG 2.2.2); пауза й тоді, коли вкладка
-   прихована або hero поза екраном. При reduced motion — одне нерухоме фото, кнопки немає. ── */
-var lotus = null;
-var lotusEl = document.querySelector(".lotus");
-if (lotusEl){
-  var motionOff = window.matchMedia("(prefers-reduced-motion: reduce)");
-  var frames = Array.prototype.slice.call(lotusEl.querySelectorAll(".lotus__img"));
-  var pauseBtn = lotusEl.querySelector(".lotus__pause");
-  var at = 0, timer = null, paused = false, inView = true, hydrated = false;
-  var next = function(){
-    frames[at].classList.remove("is-on");
-    at = (at + 1) % frames.length;
-    frames[at].classList.add("is-on");
-  };
-  lotus = {
-    unfold: function(){},            /* підміняється, коли GSAP завантажено */
-    sync: function(){
-      var on = isShyama() && !motionOff.matches;
-      if (on && !hydrated){
-        frames.forEach(function(f){ var h = f.getAttribute("data-href"); if (h){ f.setAttribute("href", h); f.removeAttribute("data-href"); } });
-        hydrated = true;
-      }
-      if (pauseBtn) pauseBtn.hidden = !on;
-      var play = on && !paused && inView && !document.hidden;
-      if (play && !timer) timer = setInterval(next, 6500);
-      if (!play && timer){ clearInterval(timer); timer = null; }
-    }
-  };
-  if (pauseBtn) pauseBtn.addEventListener("click", function(){
-    paused = !paused;
-    pauseBtn.setAttribute("aria-pressed", paused ? "true" : "false");
-    lotus.sync();
-  });
-  document.addEventListener("visibilitychange", function(){ lotus.sync(); });
-  if ("IntersectionObserver" in window){
-    new IntersectionObserver(function(es){ inView = es[0].isIntersecting; lotus.sync(); }).observe(lotusEl);
-  }
-  /* поки GSAP не розкрив бутон, квітку не показуємо; запобіжник — 2,5 с */
-  if (isShyama() && !motionOff.matches){
-    root.classList.add("lotus-wait");
-    setTimeout(function(){ root.classList.remove("lotus-wait"); }, 2500);
-  }
 }
 syncTheme();
 if (themeBtn){
@@ -169,29 +122,7 @@ function start(){
             onLeaveBack: function(){ ev.classList.remove("is-lit"); }
           });
         });
-        /* лотос: бутон розкривається від основи — спершу центральна пелюстка, потім бічні, потім нижні;
-           золотий контур домальовується; далі пелюстки ледь дихають. Яскравість не змінюється — без спалахів. */
-        var PETALS = [["c", 0, 1, 0], ["l1", -30, .9, .14], ["r1", 30, .9, .14], ["l2", -58, .72, .3], ["r2", 58, .72, .3]];
-        var breath = [];
-        if (lotus){
-          lotus.unfold = function(){
-            if (!isShyama()) return;
-            breath.forEach(function(t){ t.kill(); }); breath = [];
-            var tl = gsap.timeline({ defaults: { svgOrigin: "300 452" } });
-            tl.fromTo(".lotus g[clip-path]", { opacity: 0 }, { opacity: 1, duration: 1.4, ease: "power2.out" }, 0);
-            PETALS.forEach(function(p){
-              var sel = ".lotus .petal--" + p[0];
-              tl.fromTo(sel, { rotation: 0, scale: .16 }, { rotation: p[1], scale: p[2], duration: 2.2, ease: "expo.out" }, .1 + p[3]);
-              if (p[1]) breath.push(gsap.to(sel, { rotation: p[1] + (p[1] < 0 ? -1.6 : 1.6), svgOrigin: "300 452", duration: 5.5, ease: "sine.inOut", yoyo: true, repeat: -1, delay: 2.6 + p[3] }));
-            });
-            tl.fromTo(".lotus__line path", { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 2.6, ease: "power2.inOut" }, .2);
-            root.classList.remove("lotus-wait");
-          };
-          lotus.unfold();
-        }
         return function(){
-          breath.forEach(function(t){ t.kill(); });
-          if (lotus) lotus.unfold = function(){};
           root.classList.remove("js-motion");
           document.querySelectorAll(".ev").forEach(function(ev){ ev.classList.remove("is-lit"); });
         };

@@ -143,14 +143,13 @@ p:last-child{margin-bottom:0}
 .theme-btn[aria-pressed="true"] .theme-btn__dot::after{inset:4px;opacity:1;box-shadow:0 0 8px var(--sh-gold)}
 
 /* ── hero: редакційний спліт по сітці контейнера; текст ніколи не лежить на фото ── */
-.hero{display:grid;grid-template-columns:[full-start] minmax(var(--gut),1fr) [text-start] minmax(0,calc(var(--wrap) * .5)) [text-end photo-start] minmax(0,calc(var(--wrap) * .5)) minmax(0,1fr) [full-end];min-height:min(calc(100svh - 108px), 860px)}
+.hero{display:grid;grid-template-columns:[full-start] minmax(var(--gut),1fr) [text-start] minmax(0,calc(var(--wrap) * .5)) [text-end photo-start] minmax(0,calc(var(--wrap) * .5)) minmax(0,1fr) [full-end];min-height:min(calc(100svh - 64px), 860px)}
 .hero__text{grid-column:text;display:flex;flex-direction:column;justify-content:center;padding:clamp(48px,6vw,96px) clamp(32px,5vw,80px) clamp(48px,6vw,96px) 0;min-width:0}
 .hero h1{font-size:clamp(2.6rem, 5.4vw, 5.2rem);line-height:1.02;letter-spacing:-.02em;max-width:13ch;overflow-wrap:normal;hyphens:manual}
 .hero__lede{font-size:clamp(1.0625rem,1.25vw,1.2rem);color:var(--ink-2);max-width:46ch;margin:28px 0 0}
 .ticket{margin:28px 0 32px;padding:16px 0;border-block:1px solid var(--line);font-weight:600;max-width:52ch}
 .hero__photo{grid-column:photo-start / full-end;position:relative;margin:0;background:var(--sandal);min-width:0}
 .hero__photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 38%}
-.lotus{display:none}
 
 /* ── перший візит ── */
 .first{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:clamp(40px,5vw,72px) var(--gut)}
@@ -647,24 +646,6 @@ html:not(.js) .place__card img[data-src]{display:none}
   [data-theme="shyama"] .gal a:hover{box-shadow:0 0 0 2px var(--sh-gold),0 0 28px -6px var(--sh-glow-warm)}
   [data-theme="shyama"] .founder__sign{background:var(--sh-moon);padding:10px 14px;border-radius:var(--r-s);box-shadow:0 0 0 1px var(--sh-gold-line)}
 
-  /* лотос: фото вівтаря в силуеті лотоса; світло всередині хмари — тепле сяйво за квіткою, без спалахів */
-  [data-theme="shyama"] .hero__photo{background:var(--sh-deep)}
-  [data-theme="shyama"] .hero__photo > img{display:none}
-  [data-theme="shyama"] .lotus{display:grid;place-items:center;position:absolute;inset:0;overflow:hidden;isolation:isolate}
-  [data-theme="shyama"] .lotus::before{content:"";position:absolute;left:50%;top:56%;width:min(110%,860px);aspect-ratio:1;translate:-50% -50%;background:radial-gradient(closest-side, var(--sh-glow-warm), transparent 70%),radial-gradient(closest-side, var(--sh-glow-cool), transparent 100%);z-index:-1;pointer-events:none}
-  .lotus__art{width:min(88%,640px);height:auto;max-height:86%;overflow:visible}
-  .lotus__base{fill:var(--sh-cloud-2)}
-  .lotus__img{opacity:0;transform-box:fill-box;transform-origin:50% 45%;transition:opacity 1800ms var(--ease-inout)}
-  .lotus__img.is-on{opacity:1;animation:lotus-drift 9s var(--ease-inout) both}
-  .lotus__line path{fill:none;stroke:var(--sh-gold);stroke-width:3.2;vector-effect:non-scaling-stroke;opacity:.9}
-  .lotus__line{filter:drop-shadow(0 0 6px var(--sh-gold-line))}
-  /* поки GSAP не готовий розкрити бутон, квітку не показуємо (запобіжник у mockup.js — 2,5 с) */
-  .lotus-wait .lotus__art{opacity:0}
-  .lotus__pause{position:absolute;right:clamp(12px,2vw,24px);top:clamp(12px,2vw,24px);min-height:44px;min-width:44px;padding:0 18px;border:1px solid var(--sh-gold-line);border-radius:var(--r-pill);background:var(--sh-night);color:var(--sh-moon);font:600 .85rem/1 var(--sans);cursor:pointer;transition:border-color var(--t1) var(--ease-out)}
-  .lotus__pause:hover{border-color:var(--sh-gold)}
-  .lotus__pause[aria-pressed="true"]{color:var(--sh-gold)}
-  .lotus__pause[hidden]{display:none}
-
   /* розклад: золота лінія ледь світиться; «запалена» подія отримує тихий ореол */
   [data-theme="shyama"] .day__fill{box-shadow:0 0 12px var(--sh-gold-line)}
   [data-theme="shyama"] .ev .what::before{transition:background-color var(--t2) var(--ease-out),box-shadow var(--t3) var(--ease-out)}
@@ -678,10 +659,6 @@ html:not(.js) .place__card img[data-src]{display:none}
 
   /* зміна сцени — тихе перехресне згасання (View Transitions), без різкого перемикання */
   ::view-transition-old(root),::view-transition-new(root){animation-duration:var(--t2);animation-timing-function:var(--ease-inout)}
-}
-@keyframes lotus-drift{
-  from{transform:scale(1.02)}
-  to{transform:scale(1.1)}
 }
 @keyframes sh-drift{
   from{transform:translate3d(-2%,-1.5%,0) scale(1)}
@@ -741,8 +718,6 @@ html:not(.js) .place__card img[data-src]{display:none}
   .theme-btn{width:auto;min-height:36px;padding:0 12px 0 9px}
   .theme-btn__txt{position:static;width:auto;height:auto;overflow:visible;clip-path:none}
   [data-theme="shyama"] .hero__photo::after{box-shadow:inset 0 -1px 0 var(--sh-gold-line)}
-  [data-theme="shyama"] .hero__photo{aspect-ratio:5 / 4;max-height:46svh}
-  .lotus__art{width:auto;height:88%;max-width:92%}
   [data-theme="shyama"] .hero::before{background:radial-gradient(70% 34% at 30% 52%, var(--sh-glow-cool), transparent 72%),radial-gradient(40% 16% at 34% 64%, var(--sh-glow-warm), transparent 75%)}
   .hero{grid-template-columns:var(--gut) minmax(0,1fr) var(--gut);min-height:0}
   .hero__photo{grid-column:1 / -1;grid-row:1;aspect-ratio:16 / 9;max-height:26svh;width:100%}
@@ -811,8 +786,6 @@ html:not(.js) .place__card img[data-src]{display:none}
   .btn:active,.lang-btn:active,.menu-btn:active,.lb__bar button:active,.next__ics:active,.theme-btn:active{transform:none}
   /* «Шьяма»: світло стоїть нерухомо */
   [data-theme="shyama"] :is(.hero,#schedule,.foot)::before{animation:none!important;transform:none}
-  .lotus__img.is-on{animation:none!important;transform:none}
-  .lotus-wait .lotus__art{opacity:1}
   ::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none!important}
 }
 

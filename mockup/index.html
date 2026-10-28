@@ -96,39 +96,6 @@
     <img src="../assets/temple/hero-1280.webp"
       srcset="../assets/temple/hero-640.webp 640w, ../assets/temple/hero-768.webp 768w, ../assets/temple/hero-960.webp 960w, ../assets/temple/hero-1280.webp 1280w, ../assets/temple/hero-1920.webp 1920w"
       sizes="(max-width:860px) 100vw, 50vw" width="2560" height="1703" alt="" fetchpriority="high" decoding="async">
-
-    <!-- «Шьяма»: фото вівтаря в силуеті лотоса (власний малюнок за мотивом лотоса; логотип ISKCON не змінюється).
-         Реальні фото як є: вівтар храму, Гаура-пурніма 2024 (Артем Гусак). Лише CSS/JS-обрамлення, файли не змінені.
-         Без JS і у світлій темі — звичайне фото вище. -->
-    <div class="lotus">
-      <svg class="lotus__art" viewBox="0 0 600 480" aria-hidden="true" focusable="false">
-        <defs>
-          <clipPath id="lotus-clip">
-          <path class="petal petal--c" d="M300 452C222 368 228 160 300 36C372 160 378 368 300 452Z"/>
-          <path class="petal petal--l1" d="M300 452C222 368 228 160 300 36C372 160 378 368 300 452Z" transform="translate(300 452) rotate(-30) scale(0.9) translate(-300 -452)"/>
-          <path class="petal petal--r1" d="M300 452C222 368 228 160 300 36C372 160 378 368 300 452Z" transform="translate(300 452) rotate(30) scale(0.9) translate(-300 -452)"/>
-          <path class="petal petal--l2" d="M300 452C222 368 228 160 300 36C372 160 378 368 300 452Z" transform="translate(300 452) rotate(-58) scale(0.72) translate(-300 -452)"/>
-          <path class="petal petal--r2" d="M300 452C222 368 228 160 300 36C372 160 378 368 300 452Z" transform="translate(300 452) rotate(58) scale(0.72) translate(-300 -452)"/>
-          </clipPath>
-        </defs>
-        <!-- контур під фото: видно лише зовнішній край силуету, без внутрішніх перетинів пелюсток -->
-        <g class="lotus__line">
-        <path class="petal petal--c" d="M300 452C222 368 228 160 300 36C372 160 378 368 300 452Z" pathLength="1"/>
-        <path class="petal petal--l1" d="M300 452C222 368 228 160 300 36C372 160 378 368 300 452Z" transform="translate(300 452) rotate(-30) scale(0.9) translate(-300 -452)" pathLength="1"/>
-        <path class="petal petal--r1" d="M300 452C222 368 228 160 300 36C372 160 378 368 300 452Z" transform="translate(300 452) rotate(30) scale(0.9) translate(-300 -452)" pathLength="1"/>
-        <path class="petal petal--l2" d="M300 452C222 368 228 160 300 36C372 160 378 368 300 452Z" transform="translate(300 452) rotate(-58) scale(0.72) translate(-300 -452)" pathLength="1"/>
-        <path class="petal petal--r2" d="M300 452C222 368 228 160 300 36C372 160 378 368 300 452Z" transform="translate(300 452) rotate(58) scale(0.72) translate(-300 -452)" pathLength="1"/>
-        </g>
-        <g clip-path="url(#lotus-clip)">
-          <rect class="lotus__base" width="600" height="480"/>
-          <image class="lotus__img is-on" href="../assets/temple/hero-960.webp" x="0" y="0" width="600" height="480" preserveAspectRatio="xMidYMid slice"/>
-          <image class="lotus__img" data-href="../assets/festival/photo-01-800.webp" x="0" y="0" width="600" height="480" preserveAspectRatio="xMidYMid slice"/>
-          <image class="lotus__img" data-href="../assets/festival/photo-02-800.webp" x="0" y="0" width="600" height="480" preserveAspectRatio="xMidYMid slice"/>
-          <image class="lotus__img" data-href="../assets/festival/photo-03-800.webp" x="0" y="0" width="600" height="480" preserveAspectRatio="xMidYMid slice"/>
-        </g>
-      </svg>
-      <button type="button" class="lotus__pause" aria-pressed="false" hidden>Пауза</button>
-    </div>
   </figure>
 </section>
 

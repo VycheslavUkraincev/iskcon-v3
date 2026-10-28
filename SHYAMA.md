@@ -64,7 +64,6 @@
 | Стиль макета / Стиль макета: | Mockup style / Mockup style: | Stilul machetei / Stilul machetei: |
 | Світла | Light | Luminoasă |
 | Жива картина | Living painting | Pictura vie |
-| Пауза | Pause | Pauză |
 
 Строки «Стиль макета», «Світла», «Жива картина» — смуга над шапкою, що веде між трьома макетами (`./?theme=light`, `./?theme=shyama`, `../mockup-style3/`); поточний стиль позначає `mockup.js` через `aria-current`.
 
