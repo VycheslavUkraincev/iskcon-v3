@@ -22,6 +22,15 @@ if (btn && nav){
   });
 }
 
+/* ── якорі: --top-h = реальна висота липкої шапки (закрите меню), з неї CSS рахує scroll-margin-top ── */
+var topBar = document.querySelector(".top");
+if (topBar && "ResizeObserver" in window){
+  new ResizeObserver(function(){
+    if (nav && nav.classList.contains("is-open")) return;
+    document.documentElement.style.setProperty("--top-h", Math.round(topBar.getBoundingClientRect().height) + "px");
+  }).observe(topBar);
+}
+
 /* ── тема «Шьяма»: data-theme на <html>, вибір у localStorage. Без JS кнопки немає, сторінка світла.
    Сам атрибут ставить вбудований скрипт у <head> ще до першого кадру, тут — лише кнопка й перемикання. ── */
 var root = document.documentElement;
