@@ -35,6 +35,7 @@
   --marigold-hover: oklch(85.5% 0.14 80);
   --marigold-ink: oklch(49% 0.12 62);   /* чорнобривці як текст на світлому */
   --kumkum: oklch(53% 0.19 32);         /* кумкум: фокус */
+  --af-line: oklch(62% 0.1 72);         /* тонка золота лінія й лоза рами картини */
   /* «Шьяма»: грозова хмара, підсвічена зсередини. Ролі — у SHYAMA.md */
   --sh-deep: oklch(13.5% 0.03 264);     /* серце хмари: темні сцени */
   --sh-night: oklch(17% 0.034 262);     /* фон */
@@ -671,6 +672,12 @@ html:not(.js) .place__card img[data-src]{display:none}
   [data-theme="shyama"] .mantra-card h3{color:var(--sh-gold)}
   [data-theme="shyama"] .book{border-top-color:var(--sh-gold-line)}
 
+  /* картини: ніша — рама на хмарі й м'яке золоте світіння позаду */
+  [data-theme="shyama"]{--af-line:var(--sh-gold)}
+  [data-theme="shyama"] .art-frame__mat{background:var(--sh-cloud-2);border-color:var(--sh-gold-line);box-shadow:0 0 0 1px oklch(80% 0.105 82 / .08),0 0 90px -14px oklch(80% 0.105 82 / .30),0 40px 80px -48px var(--sh-glow-cool)}
+  [data-theme="shyama"] .on-sandal .art-frame__mat{background:var(--sh-cloud-2)}
+  [data-theme="shyama"] .art-frame img{box-shadow:0 0 0 1px var(--sh-gold-line)}
+
   /* зміна сцени — тихе перехресне згасання (View Transitions), без різкого перемикання */
   ::view-transition-old(root),::view-transition-new(root){animation-duration:var(--t2);animation-timing-function:var(--ease-inout)}
 }
@@ -678,6 +685,34 @@ html:not(.js) .place__card img[data-src]{display:none}
   from{transform:translate3d(-2%,-1.5%,0) scale(1)}
   to{transform:translate3d(2%,1.5%,0) scale(1.06)}
 }
+
+/* ── .art-frame: класична картина в рамі (золота лінія + кутова лоза, як у картині-пілоті стилю 3).
+   Картина — завжди <img> у рамі, ніколи не фон і не під текстом; одна картина на екран. ── */
+.art-frame{margin:0;width:100%;max-width:var(--af-w,420px)}
+.art-frame__mat{position:relative;padding:clamp(18px,2.4vw,28px);background:var(--sandal);border:1px solid var(--af-line);border-radius:var(--r-s)}
+.on-sandal .art-frame__mat{background:var(--lime)}
+.art-frame img{display:block;width:100%;height:auto;border-radius:2px;box-shadow:0 0 0 1px oklch(40% 0.05 70 / .35)}
+.art-frame__c{position:absolute;width:clamp(36px,4vw,46px);height:clamp(36px,4vw,46px);color:var(--af-line);fill:currentColor;pointer-events:none;z-index:1}
+.art-frame__c--tl{top:3px;left:3px}
+.art-frame__c--tr{top:3px;right:3px;transform:scaleX(-1)}
+.art-frame__c--bl{bottom:3px;left:3px;transform:scaleY(-1)}
+.art-frame__c--br{bottom:3px;right:3px;transform:scale(-1)}
+.art-frame figcaption{margin-top:12px;font-size:.88rem;line-height:1.45;color:var(--ink-2)}
+.art-frame figcaption small{display:block;font-size:.74rem;letter-spacing:.01em;opacity:.9}
+.art-frame--tall{--af-w:400px}
+.art-frame--wide{--af-w:660px}
+.art-frame--card{--af-w:320px}
+
+/* «Лекції» і «Мантра-йога»: два окремі ряди, щоб дві картини не стояли на одному екрані */
+.phil__art{grid-column:8 / span 5;justify-self:end}
+.phil--mantra{margin-top:clamp(64px,9vw,120px);align-items:center}
+.phil--mantra .mantra-card{grid-column:1 / span 5}
+.phil--mantra .phil__art{grid-column:6 / span 7}
+.founder__art{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gut);margin-top:clamp(56px,7vw,96px)}
+.founder__art .art-frame{grid-column:1 / span 4}
+.course > .art-frame{grid-column:1 / span 5;grid-row:2}
+.course > .course__img{grid-row:1}
+.course > .course__body{grid-row:1 / span 2}
 
 /* ── адаптив ── */
 @media (max-width: 1080px){
@@ -690,7 +725,9 @@ html:not(.js) .place__card img[data-src]{display:none}
   .sched__head .h2,.sched__head .sub{grid-column:1 / -1}
   .day{grid-column:1 / -1}
   .sched__side{grid-column:1 / -1;display:grid;grid-template-columns:1fr 1fr;align-items:start}
-  .phil__text,.mantra-card{grid-column:1 / -1}
+  .phil__text,.mantra-card,.phil--mantra .mantra-card{grid-column:1 / -1}
+  .phil__art,.phil--mantra .phil__art{grid-column:1 / -1;justify-self:start}
+  .founder__art .art-frame{grid-column:1 / span 6}
   .founder__photo{grid-column:1 / span 5}
   .founder__text{grid-column:6 / span 7}
   .map__text,.map__frame,.faq .h2,.faq__list{grid-column:1 / -1}
@@ -771,7 +808,10 @@ html:not(.js) .place__card img[data-src]{display:none}
   .ways__grid,.give__grid,.impact__grid{grid-template-columns:1fr}
   .use__grid .h2,.use__body,.req-page .h2,.req--page{grid-column:1 / -1}
   .page-hero__text,.toc{grid-column:1 / -1}
-  .course__img,.course__body{grid-column:1 / -1}
+  .course__img,.course__body,.course > .art-frame{grid-column:1 / -1}
+  .course > .course__img,.course > .course__body{grid-row:auto}
+  .course > .art-frame{grid-row:auto;order:3}
+  .founder__art .art-frame{grid-column:1 / -1}
   .course__img{aspect-ratio:16 / 10}
   .signup__text,.signup__actions{grid-column:1 / -1}
   .signup__actions{justify-content:flex-start}
