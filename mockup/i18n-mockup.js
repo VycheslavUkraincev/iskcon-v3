@@ -6,7 +6,7 @@
 if (typeof I18N === "undefined") return;
 var add = {
   en: { "Тема «Шьяма»": "Shyama theme", "Шьяма": "Shyama",
-        "Стиль макета": "Mockup style", "Стиль макета:": "Mockup style:", "Світла": "Light", "Жива картина": "Living painting",
+        "Стиль макета": "Mockup style", "Стиль макета:": "Mockup style:", "Світла": "Light",
         /* підписи й alt нових фото (MEDIA_SELECTION.md) */
         "На святі Гаура-пурніми, 2024": "At the Gaura Purnima festival, 2024", "Гаура-пурніма, 2024": "Gaura Purnima, 2024",
         "Троє чоловіків на святі сидять поруч і усміхаються": "Three men sit together at the festival, smiling",
@@ -18,7 +18,7 @@ var add = {
         "«Їжа життя»: кухня і роздача.": "Food for Life: the kitchen and the distribution.",
         "Кадри: «Шпальта Медіа» — чернетка, до погодження з редакцією.": "Frames: Shpalta Media. Draft, pending the newsroom’s approval." },
   ro: { "Тема «Шьяма»": "Tema „Shyama”", "Шьяма": "Shyama",
-        "Стиль макета": "Stilul machetei", "Стиль макета:": "Stilul machetei:", "Світла": "Luminoasă", "Жива картина": "Pictura vie",
+        "Стиль макета": "Stilul machetei", "Стиль макета:": "Stilul machetei:", "Світла": "Luminoasă",
         "На святі Гаура-пурніми, 2024": "La sărbătoarea Gaura Purnima, 2024", "Гаура-пурніма, 2024": "Gaura Purnima, 2024",
         "Троє чоловіків на святі сидять поруч і усміхаються": "Trei bărbați stau împreună la sărbătoare și zâmbesc",
         "Кіртан: фісгармонія і каратали": "Kirtan: armoniu și karatale",

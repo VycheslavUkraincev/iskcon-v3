@@ -62,13 +62,12 @@
 <body>
 <a class="skip" href="#main">Перейти до вмісту</a>
 
-<!-- перемикач між трьома макетами головної; поточний стиль позначає mockup.js (без JS — світла) -->
+<!-- перемикач між двома стилями макета; поточний стиль позначає mockup.js (без JS — світла) -->
 <nav class="styles" aria-label="Стиль макета">
   <div class="wrap styles__in">
     <span class="styles__label">Стиль макета:</span>
     <a href="?theme=light" data-style="light" aria-current="page">Світла</a>
     <a href="?theme=shyama" data-style="shyama">Шьяма</a>
-    <a href="../../mockup-style3/">Жива картина</a>
   </div>
 </nav>
 
@@ -109,9 +108,14 @@
     <p class="form-lang">Форма для волонтерів відкриється українською мовою</p>
     <p class="food-hero__help"><a class="arrow-link" href="#when-where">Потрібна допомога? Дивіться, де і коли →</a></p>
   </div>
-  <figure class="food-hero__photo">
-    <img src="../../assets/food/food-hero-564.webp" srcset="../../assets/food/food-hero-360.webp 360w, ../../assets/food/food-hero-564.webp 564w, ../../assets/food/food-hero-722.webp 722w" sizes="(max-width:860px) 100vw, 45vw" width="564" height="705" alt="Роздача гарячих обідів" fetchpriority="high" decoding="async">
-  </figure>
+  <div class="food-hero__photo">
+    <figure class="art-frame art-frame--card">
+            <div class="art-frame__mat"><svg class="art-frame__c art-frame__c--tl" aria-hidden="true" focusable="false"><use href="#vine"/></svg><svg class="art-frame__c art-frame__c--tr" aria-hidden="true" focusable="false"><use href="#vine"/></svg><svg class="art-frame__c art-frame__c--bl" aria-hidden="true" focusable="false"><use href="#vine"/></svg><svg class="art-frame__c art-frame__c--br" aria-hidden="true" focusable="false"><use href="#vine"/></svg>
+              <img src="../media/art/krishna-picnic-boys-560.webp" srcset="../media/art/krishna-picnic-boys-560.webp 560w" sizes="380px" width="560" height="752" alt="Класична картина: Крішна з друзями-пастушками разом їдуть прасад біля лотосового ставка" loading="lazy" decoding="async">
+            </div>
+            <figcaption><small>© The Bhaktivedanta Book Trust International, Inc.</small></figcaption>
+          </figure>
+  </div>
 </section>
 
 <section class="sec on-leaf facts" id="when-where" aria-labelledby="facts-title">
@@ -204,17 +208,6 @@
       <h2 id="proof-title" class="h2">Наші волонтери в дії</h2>
       <p class="sub">Кожної суботи готуємо та роздаємо теплі обіди</p>
     </div>
-  </div>
-  <div class="proof__strip" tabindex="0" role="region" aria-label="Фото волонтерів" data-lightbox>
-        <a href="../../assets/food/ffl-carousel-01.jpg"><img src="../../assets/food/ffl-carousel-01-360.webp" srcset="../../assets/food/ffl-carousel-01-360.webp 360w, ../../assets/food/ffl-carousel-01-563.webp 563w" sizes="(max-width:860px) 200px, 260px" width="360" height="640" alt="Волонтери роздають їжу" loading="lazy" decoding="async"></a>
-        <a href="../../assets/food/ffl-carousel-02.jpg"><img src="../../assets/food/ffl-carousel-02-360.webp" srcset="../../assets/food/ffl-carousel-02-360.webp 360w, ../../assets/food/ffl-carousel-02-563.webp 563w" sizes="(max-width:860px) 200px, 260px" width="360" height="640" alt="Роздача гарячих обідів" loading="lazy" decoding="async"></a>
-        <a href="../../assets/food/ffl-carousel-03.jpg"><img src="../../assets/food/ffl-carousel-03-360.webp" srcset="../../assets/food/ffl-carousel-03-360.webp 360w, ../../assets/food/ffl-carousel-03-563.webp 563w" sizes="(max-width:860px) 200px, 260px" width="360" height="640" alt="Волонтер з їжею" loading="lazy" decoding="async"></a>
-        <a href="../../assets/food/ffl-carousel-04.jpg"><img src="../../assets/food/ffl-carousel-04-360.webp" srcset="../../assets/food/ffl-carousel-04-360.webp 360w, ../../assets/food/ffl-carousel-04-563.webp 563w" sizes="(max-width:860px) 200px, 260px" width="360" height="640" alt="Приготування їжі" loading="lazy" decoding="async"></a>
-        <a href="../../assets/food/ffl-carousel-05.jpg"><img src="../../assets/food/ffl-carousel-05-360.webp" srcset="../../assets/food/ffl-carousel-05-360.webp 360w, ../../assets/food/ffl-carousel-05-563.webp 563w" sizes="(max-width:860px) 200px, 260px" width="360" height="640" alt="Волонтери на кухні" loading="lazy" decoding="async"></a>
-        <a href="../../assets/food/ffl-carousel-06.jpg"><img src="../../assets/food/ffl-carousel-06-360.webp" srcset="../../assets/food/ffl-carousel-06-360.webp 360w, ../../assets/food/ffl-carousel-06-563.webp 563w" sizes="(max-width:860px) 200px, 260px" width="360" height="640" alt="Готуємо разом" loading="lazy" decoding="async"></a>
-        <a href="../../assets/food/ffl-carousel-07.jpg"><img src="../../assets/food/ffl-carousel-07-360.webp" srcset="../../assets/food/ffl-carousel-07-360.webp 360w, ../../assets/food/ffl-carousel-07-563.webp 563w" sizes="(max-width:860px) 200px, 260px" width="360" height="640" alt="Усміхнений волонтер" loading="lazy" decoding="async"></a>
-        <a href="../../assets/food/ffl-carousel-08.jpg"><img src="../../assets/food/ffl-carousel-08-360.webp" srcset="../../assets/food/ffl-carousel-08-360.webp 360w, ../../assets/food/ffl-carousel-08-563.webp 563w" sizes="(max-width:860px) 200px, 260px" width="360" height="640" alt="Волонтери в парку" loading="lazy" decoding="async"></a>
-        <a href="../../assets/food/ffl-carousel-09.jpg"><img src="../../assets/food/ffl-carousel-09-360.webp" srcset="../../assets/food/ffl-carousel-09-360.webp 360w, ../../assets/food/ffl-carousel-09-563.webp 563w" sizes="(max-width:860px) 200px, 260px" width="360" height="640" alt="Роздача супу" loading="lazy" decoding="async"></a>
   </div>
   <div class="wrap proof__grid">
     <div class="report">

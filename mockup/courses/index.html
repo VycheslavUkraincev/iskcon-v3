@@ -37,13 +37,12 @@
 </svg>
 <a class="skip" href="#main">Перейти до вмісту</a>
 
-<!-- перемикач між трьома макетами головної; поточний стиль позначає mockup.js (без JS — світла) -->
+<!-- перемикач між двома стилями макета; поточний стиль позначає mockup.js (без JS — світла) -->
 <nav class="styles" aria-label="Стиль макета">
   <div class="wrap styles__in">
     <span class="styles__label">Стиль макета:</span>
     <a href="?theme=light" data-style="light" aria-current="page">Світла</a>
     <a href="?theme=shyama" data-style="shyama">Шьяма</a>
-    <a href="../../mockup-style3/">Жива картина</a>
   </div>
 </nav>
 
@@ -88,15 +87,11 @@
   <section class="sec sec--tight">
     <div class="wrap">
       <div class="courses" id="courses-list">
-        <!-- Фото курсів: assets/courses-*.jpeg мають непідтверджене походження (AUDIT P1-4), тому в макеті —
-             реальні фото Гаура-пурніми 2024 (Артем Гусак) і обкладинка «Бгаґавад-ґіти». Див. FULL-SITE.md. -->
+        <!-- Візуал курсу — лише класична ілюстрація BBT в рамі .art-frame; фото на сторінці немає. -->
         <article class="course" id="philosophy">
-          <figure class="course__img course__img--book">
-            <img src="../../assets/book-bg-380.webp" srcset="../../assets/book-bg-300.webp 300w, ../../assets/book-bg-380.webp 380w" sizes="(max-width:860px) 50vw, 240px" width="190" height="302" alt="Бгаґавад-ґіта" decoding="async">
-          </figure>
-          <figure class="art-frame art-frame--card">
+          <figure class="art-frame art-frame--course">
             <div class="art-frame__mat"><svg class="art-frame__c art-frame__c--tl" aria-hidden="true" focusable="false"><use href="#vine"/></svg><svg class="art-frame__c art-frame__c--tr" aria-hidden="true" focusable="false"><use href="#vine"/></svg><svg class="art-frame__c art-frame__c--bl" aria-hidden="true" focusable="false"><use href="#vine"/></svg><svg class="art-frame__c art-frame__c--br" aria-hidden="true" focusable="false"><use href="#vine"/></svg>
-              <img src="../media/art/six-goswamis-640.webp" srcset="../media/art/six-goswamis-640.webp 640w" sizes="(max-width:860px) 320px, 320px" width="640" height="422" alt="Класична картина: шість Госвамі сидять у садах Вріндавана й пишуть книги" loading="lazy" decoding="async">
+              <img src="../media/art/six-goswamis-640.webp" srcset="../media/art/six-goswamis-640.webp 640w" sizes="(max-width:860px) 80vw, 460px" width="640" height="422" alt="Класична картина: шість Госвамі сидять у садах Вріндавана й пишуть книги" loading="lazy" decoding="async">
             </div>
             <figcaption><small>© The Bhaktivedanta Book Trust International, Inc.</small></figcaption>
           </figure>
@@ -118,12 +113,9 @@
           </div>
         </article>
         <article class="course" id="cooking">
-          <figure class="course__img">
-            <img src="../../assets/festival/photo-18-800.webp" srcset="../../assets/festival/photo-18-480.webp 480w, ../../assets/festival/photo-18-800.webp 800w" sizes="(max-width:860px) 100vw, 45vw" width="800" height="532" alt="Десерт-прасад" loading="lazy" decoding="async">
-          </figure>
-          <figure class="art-frame art-frame--card">
+          <figure class="art-frame art-frame--course">
             <div class="art-frame__mat"><svg class="art-frame__c art-frame__c--tl" aria-hidden="true" focusable="false"><use href="#vine"/></svg><svg class="art-frame__c art-frame__c--tr" aria-hidden="true" focusable="false"><use href="#vine"/></svg><svg class="art-frame__c art-frame__c--bl" aria-hidden="true" focusable="false"><use href="#vine"/></svg><svg class="art-frame__c art-frame__c--br" aria-hidden="true" focusable="false"><use href="#vine"/></svg>
-              <img src="../media/art/krishna-picnic-boys-560.webp" srcset="../media/art/krishna-picnic-boys-560.webp 560w" sizes="(max-width:860px) 320px, 320px" width="560" height="752" alt="Класична картина: Крішна з друзями-пастушками разом їдуть прасад біля лотосового ставка" loading="lazy" decoding="async">
+              <img src="../media/art/krishna-picnic-boys-560.webp" srcset="../media/art/krishna-picnic-boys-560.webp 560w" sizes="(max-width:860px) 80vw, 460px" width="560" height="752" alt="Класична картина: Крішна з друзями-пастушками разом їдуть прасад біля лотосового ставка" loading="lazy" decoding="async">
             </div>
             <figcaption><small>© The Bhaktivedanta Book Trust International, Inc.</small></figcaption>
           </figure>
@@ -142,12 +134,9 @@
           </div>
         </article>
         <article class="course" id="music">
-          <figure class="course__img">
-            <img src="../../assets/festival/photo-10-800.webp" srcset="../../assets/festival/photo-10-480.webp 480w, ../../assets/festival/photo-10-800.webp 800w" sizes="(max-width:860px) 100vw, 45vw" width="800" height="1203" alt="Гра на караталах" loading="lazy" decoding="async">
-          </figure>
-          <figure class="art-frame art-frame--card">
+          <figure class="art-frame art-frame--course">
             <div class="art-frame__mat"><svg class="art-frame__c art-frame__c--tl" aria-hidden="true" focusable="false"><use href="#vine"/></svg><svg class="art-frame__c art-frame__c--tr" aria-hidden="true" focusable="false"><use href="#vine"/></svg><svg class="art-frame__c art-frame__c--bl" aria-hidden="true" focusable="false"><use href="#vine"/></svg><svg class="art-frame__c art-frame__c--br" aria-hidden="true" focusable="false"><use href="#vine"/></svg>
-              <img src="../media/art/chaitanya-sankirtana-dance-640.webp" srcset="../media/art/chaitanya-sankirtana-dance-640.webp 640w" sizes="(max-width:860px) 320px, 320px" width="640" height="487" alt="Класична картина: Господь Чайтанья танцює в санкіртані" loading="lazy" decoding="async">
+              <img src="../media/art/chaitanya-sankirtana-dance-640.webp" srcset="../media/art/chaitanya-sankirtana-dance-640.webp 640w" sizes="(max-width:860px) 80vw, 460px" width="640" height="487" alt="Класична картина: Господь Чайтанья танцює в санкіртані" loading="lazy" decoding="async">
             </div>
             <figcaption><small>© The Bhaktivedanta Book Trust International, Inc.</small></figcaption>
           </figure>
